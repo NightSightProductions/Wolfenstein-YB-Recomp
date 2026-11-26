@@ -1,0 +1,24 @@
+# Whitelist: ignore everything, then allow only this project's own code.
+# Never commit gen*/ (code generated from the game), orig.exe / orig_*.dll (links to your game files),
+# build output, game data, external/ (the Mesa checkout) or prebuilt/ (the installer's driver copy).
+/*
+!/.gitignore
+!/.gitmodules
+!/.github/
+!/README.md
+!/LICENSE
+!/Makefile
+!/framework
+!/src/
+!/scripts/
+!/setup/
+!/docs/
+!/tools/
+/tools/*
+!/tools/steam_shortcut.py
+!/tools/native.txt
+!/tools/patches.txt
+!/tools/unwrap_steamstub.py
+!/tests/
+.DS_Store
+__pycache__/

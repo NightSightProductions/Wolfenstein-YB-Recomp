@@ -1,0 +1,3 @@
+# Guest functions in Youngblood_x64vk.exe (unwrapped) replaced by native code: "address name" per line.
+# Each name is a void N_x(CPU *c); see src/native_youngblood.c and framework/runtime/native.c.
+# Youngblood links the C runtime dynamically, so memcpy/memmove/memset are imports (VCRUNTIME140), not listed here.

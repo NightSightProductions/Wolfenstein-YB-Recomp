@@ -1,0 +1,8 @@
+# Instruction patches for Youngblood_x64vk.exe (unwrapped), applied by the translator (make gen).
+# Each line: guest address, then C that replaces that instruction (C.<reg> names, as the translator emits).
+
+# The Vulkan allocator's largest host-visible block: vulkan_VRAMAllocatorMaxBlockSizeHostVisibleMB (32) unless the GPU
+# is Intel's, which gets the _Intel cvar (40). Apple GPUs share memory with the CPU as Intel's do, and the game puts the
+# same things in host-visible memory, among them a 36 MiB descriptor-set uniform pool that no 32 MiB block can hold
+# ("Failed to allocate video memory" when the first level loads). Both cvars are read-only, so every GPU gets the _Intel one.
+1407d43ad C.rax = (uint64_t)(int64_t)(int32_t)rd32(0x14308bb10ull);
