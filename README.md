@@ -123,17 +123,19 @@ installer's prebuilt KosmicKrisp driver (Mesa, MIT) and Vulkan loader (Khronos, 
 
 **Wolfenstein Youngblood Recomp** provides:
   - Native Apple Silicon (arm64) build of the original Windows release, with the original engine code
-  - The campaign with an AI partner, with Bink cutscenes, music and sound
+  - The campaign with an AI partner or a friend, with Bink cutscenes, music and sound
   - The built-in benchmark
   - Vulkan rendering on Metal through KosmicKrisp, up to the Ultra preset, at any of the Mac's resolutions
   - Keyboard, mouse and game controller input
   - Steam sign-in, achievements and Steam Cloud saves shared with the Windows version
-  - Bethesda.net sign-in
+  - Bethesda.net sign-in and online co-op, hosting or joining a friend, including a friend who plays through
+    the Buddy Pass on Windows
   - A macOS installer that builds the game from your own copy
 
 ## Known Issues
 
-  - Online co-op with another player has not been tested yet.
+  - The Buddy Pass itself (the free companion release a friend can join you with) is Windows-only for now. A
+    recompiled Buddy Pass for Mac players is planned.
   - Voice chat has no microphone input.
   - The Mac's 20:13 resolutions are listed under the 3:2 aspect ratio (see above).
 
@@ -205,7 +207,7 @@ These environment variables are read by the game when started from a terminal (o
 | `RT_FPS=1` | Log the frame rate and worst frame time every 5 seconds |
 | `RT_VK_FEATURES=1` | Log the Vulkan features and extensions the game asks for and gets |
 | `RT_LIST_MODES=1` | Log the display modes offered to the game |
-| `RT_NET_TRACE=1` | Log socket activity and each TLS record of the Bethesda.net connection |
+| `RT_NET_TRACE=1` | Log socket activity (each datagram, with its peer) and each TLS record of the Bethesda.net connection |
 | `RT_NCPU=n` | Report *n* processors to the game |
 | `RT_GPU_CAPTURE=secs` | Save a Metal GPU capture of one frame, *secs* seconds after launch (opens in Xcode) |
 | `YOUNGBLOOD_STEAM_OFFLINE=1` | Do not connect to Steam |
